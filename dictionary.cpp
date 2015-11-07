@@ -30,25 +30,25 @@ std::map<int, UnicodeString> read_lines(std::string filename)
 		UnicodeString ucs = UnicodeString::fromUTF8(StringPiece(line.c_str()));
 
 		// initialize array of unicodestrings, upto max set previously
-    	UnicodeString words[maxWords];    
+		UnicodeString words[maxWords];    
     	
-    	// split string into components
-    	int numWords = m.split(ucs, words, maxWords, status);
+		// split string into components
+		int numWords = m.split(ucs, words, maxWords, status);
     	
-    	// skip to next line if less than 2 elements
-    	if (numWords < 2) {
-    		continue;
-    	}
+		// skip to next line if less than 2 elements
+		if (numWords < 2) {
+			continue;
+		}
 
-    	// add entry to dictionary mapping; enforce uppercase
-    	try {
-    		string int_string;
-    		words[0].toUTF8String(int_string);
-    		dictionary[std::stoi(int_string)] = words[1].toUpper();		
-    	} 
-    	catch (exception& e) {
-    		std::cerr << "ERROR Standard exception: " << e.what() << std::endl;
-  		}
+		// add entry to dictionary mapping; enforce uppercase
+		try {
+			string int_string;
+			words[0].toUTF8String(int_string);
+			dictionary[std::stoi(int_string)] = words[1].toUpper();		
+		} 
+		catch (exception& e) {
+			std::cerr << "ERROR Standard exception: " << e.what() << std::endl;
+		}
 	}
 
 	return dictionary;
