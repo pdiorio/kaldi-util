@@ -1,22 +1,25 @@
 Prereqs: 
-ICU needs to be installed
++ ICU4C needs to be installed
++ http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-src.tgz
     ./configure
     make
     make install
 
 
 Compilation:
-clang++ other.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary
++ clang++ dictionary.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary
 
 
 Execution:
-./dictionary words.txt
++ ./dictionary words.txt
+
 
 
 Word list format:
+
 0 <word1>
 1 <word2>
 ...
 1920 <word1921>
-
+...
 
