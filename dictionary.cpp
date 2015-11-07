@@ -42,7 +42,7 @@ std::map<int, UnicodeString> read_lines(std::string filename)
 
 		// add entry to dictionary mapping; enforce uppercase
 		try {
-			string int_string;
+			std::string int_string;
 			words[0].toUTF8String(int_string);
 			dictionary[std::stoi(int_string)] = words[1].toUpper();		
 		} 
