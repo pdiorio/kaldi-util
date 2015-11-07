@@ -1,0 +1,22 @@
+Prereqs: 
+ICU needs to be installed
+    ./configure
+    make
+    make install
+
+
+Compilation:
+clang++ other.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary
+
+
+Execution:
+./dictionary words.txt
+
+
+Word list format:
+0 <word1>
+1 <word2>
+...
+1920 <word1921>
+
+
