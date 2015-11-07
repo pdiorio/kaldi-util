@@ -16,10 +16,10 @@ std::map<int, UnicodeString> read_lines(std::string filename)
 	// regex setup; split on whitespace upto a max of 3 per line
 	// first field is integer number, second field is word, the rest of the line is stored in third field
 	UErrorCode status = U_ZERO_ERROR;
-    RegexMatcher m("\\s+", 0, status); 
-    const int maxWords = 3;
+	RegexMatcher m("\\s+", 0, status); 
+	const int maxWords = 3;
 
-    // setup file
+	// setup file
 	std::ifstream file(filename);	// file.seekg(0, file.beg);
 
 	// setup temporary line variable
@@ -60,12 +60,12 @@ int main(int argc, char* argv[])
 	std::string filename = argv[1];
 
 	// parse lines from filename into a dictionary mapping from int->word
-    std::map<int, UnicodeString> dict = read_lines(filename);
+	std::map<int, UnicodeString> dict = read_lines(filename);
 
-    // display entire map using iterators
-    for (std::map<int, UnicodeString>::iterator it = dict.begin(); it != dict.end(); ++it) {
-    	std::cout << it->first << ": " << it->second << std::endl;
-    }
+	// display entire map using iterators
+	for (std::map<int, UnicodeString>::iterator it = dict.begin(); it != dict.end(); ++it) {
+		std::cout << it->first << ": " << it->second << std::endl;
+	}
 
-    return 0;
+	return 0;
 }
