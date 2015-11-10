@@ -1,18 +1,28 @@
+dictionary.cpp is a c++11 version
+dictionary2.cpp is a c++03 version
+
 Prereqs: 
-+ ICU4C needs to be installed
-+ http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-src.tgz
-    ./configure
-    make
-    make install
+	ICU4C needs to be installed
+	http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-src.tgz
+    	./configure
+   		make
+    	make install
 
+    OR yum install icu libicu libicu-devel
+    
 
-Compilation:
-+ clang++ dictionary.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary
+c++11 compilation:
+	clang++ -O3 dictionary.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary
+	c++ -O3 -std=c++11 -stdlib=libc++ dictionary.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary
+
+c++03 compilation
+	clang++ -O3 dictionary2.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary2
+	c++ -O3 -stdlib=libc++ dictionary2.cpp -L/usr/local/lib -licui18n -licuuc -licudata -licuio -o dictionary2
 
 
 Execution:
-+ ./dictionary words.txt
-
+	./dictionary words.txt
+	./dictionary2 words.txt
 
 
 Word list format:
